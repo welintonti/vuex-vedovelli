@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>Welcome Vue 2</h1>
-    <h4> {{ user }} </h4>
+    <h4> {{ user }} - {{ outraCoisa }}</h4>
     <hr>
     <AppUser />
   </div>
@@ -10,6 +10,7 @@
 
 <script>
 import AppUser from 'src/components/users/main.vue'
+import { mapState } from 'vuex'
 export default {
   name: 'app',
   mounted () {
@@ -27,9 +28,14 @@ export default {
     AppUser
   },
   computed: {
-    user () {
-      const { name, email } = this.$store.state.user
-      return `O usuário Logado é ${name} e possui email ${email}`
+    ...mapState({
+      user: state => {
+        const { name, email } = state.user
+        return `O usuário Logado é ${name} e possui email ${email}`
+      }
+    }),
+    outraCoisa () {
+      return 'Mais uma informação'
     }
   }
 }
