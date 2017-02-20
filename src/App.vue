@@ -12,6 +12,17 @@
 import AppUser from 'src/components/users/main.vue'
 export default {
   name: 'app',
+  mounted () {
+    const payload = {
+      name: 'Welinton Subtil',
+      email: 'welinton@realizati.com.br',
+      level: 5
+    }
+
+    setTimeout(() => {
+      this.$store.commit('CHANGE_USER', payload)
+    }, 3000)
+  },
   components: {
     AppUser
   },

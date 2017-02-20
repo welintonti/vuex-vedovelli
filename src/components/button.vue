@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="mudarDados">Mudar dados do Usuário</button>
+    <button :disabled="!hasUser" @click="mudarDados">Mudar dados do Usuário</button>
   </div>
 </template>
 <script>
@@ -13,6 +13,11 @@
           level: 5
         }
         this.$store.commit('CHANGE_USER', payload)
+      }
+    },
+    computed: {
+      hasUser () {
+        return this.$store.state.user.name !== ''
       }
     }
   }
