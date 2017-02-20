@@ -10,19 +10,24 @@
 
 <script>
 import AppUser from 'src/components/users/main.vue'
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'app',
   mounted () {
     const payload = {
       name: 'Welinton Subtil',
       email: 'welinton@realizati.com.br',
-      level: 5
+      level: 5,
+      city: 'Porto Seguro',
+      state: 'BA'
     }
 
     setTimeout(() => {
-      this.$store.commit('CHANGE_USER', payload)
+      this.changeUser(payload)
     }, 3000)
+  },
+  methods: {
+    ...mapActions(['changeUser'])
   },
   components: {
     AppUser

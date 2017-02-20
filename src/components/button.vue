@@ -4,21 +4,26 @@
   </div>
 </template>
 <script>
+  import { mapState, mapActions } from 'vuex'
   export default {
     methods: {
       mudarDados () {
         const payload = {
           name: 'Outro Nome',
           email: 'email@gmail.com',
-          level: 5
+          level: 5,
+          city: 'Porto Seguro',
+          state: 'BA'
         }
-        this.$store.commit('CHANGE_USER', payload)
-      }
+        this.changeUser(payload)
+        // this.$store.commit('CHANGE_USER', payload)
+      },
+      ...mapActions(['changeUser'])
     },
     computed: {
-      hasUser () {
-        return this.$store.state.user.name !== ''
-      }
+      ...mapState({
+        hasUser: state => state.user.name !== ''
+      })
     }
   }
 
