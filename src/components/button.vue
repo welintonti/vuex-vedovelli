@@ -7,7 +7,12 @@
   export default {
     methods: {
       mudarDados () {
-        console.log('alguma coisa')
+        const payload = {
+          name: 'Outro Nome',
+          email: 'email@gmail.com',
+          level: 5
+        }
+        this.$store.commit('CHANGE_USER', payload)
       }
     }
   }
