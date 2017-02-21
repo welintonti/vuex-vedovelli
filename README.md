@@ -1,6 +1,9 @@
-# vuex-vedovelli
+# Aplicação do estudo do vídeo do Fábio Vedovelli sobre Vuex
 
-> A Vue.js project
+[Link do Vídeo no Youtube](https://www.youtube.com/watch?v=BT1kKaZwPRs)
+
+Projeto criado através do  `vue-cli`
+
 
 ## Build Setup
 
