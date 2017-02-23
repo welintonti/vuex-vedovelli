@@ -2,7 +2,9 @@
 
 [Link do Vídeo no Youtube](https://www.youtube.com/watch?v=BT1kKaZwPRs)
 
-Projeto criado através do  `vue-cli`
+Projeto criado através do  `vue-cli`:
+
+`vue init webpack vuex-vedovelli`
 
 
 ## Build Setup
